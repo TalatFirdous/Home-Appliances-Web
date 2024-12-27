@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Appliances</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e9ecef; /* Light background for contrast */
+        }
+        header {
+            background: #16415c;
+            color: #ffffff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 5px 10px;
+            transition: background 0.3s, color 0.3s; /* Smooth transition */
+        }
+        nav a:hover {
+            background: #2c3e50; /* Darker background on hover */
+            border-radius: 5px; /* Rounded corners on hover */
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background: #ffffff;
+            margin: 3px 0;
+            transition: all 0.3s; /* Smooth transition for hamburger */
+        }
+        .nav-links {
+            display: flex;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none; /* Hide the menu by default */
+                flex-direction: column;
+                width: 100%;
+                background: #35424a;
+                position: absolute;
+                top: 60px; /* Position below the header */
+                left: 0;
+                z-index: 1000; /* Ensure it appears above other content */
+            }
+            nav ul.active {
+                display: flex; /* Show the menu when active */
+            }
+            .hamburger {
+                display: flex; /* Show hamburger icon */
+            }
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #ffffff; /* White background for sections */
+            margin: 20px 0;
+            border-radius: 10px; /* Rounded corners for sections */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            margin-bottom: 20px;
+            color: #16415c; /* Darker color for headings */
+        }
+        .appliance {
+            display: inline-block;
+            width: 200px;
+            margin: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .appliance:hover {
+            transform: translateY(-5px);
+        }
+        .appliance img {
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+        }
+        .appliance h3 {
+            margin: 10px 0;
+            color: #16415c; /* Darker color for appliance titles */
+        }
+        .appliance p {
+            padding: 0 10px;
+            color: #555; /* Dark gray for descriptions */
+        }
+
+        /* Contact Form Styles */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        input, textarea {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+ border-radius: 5px; /* Rounded corners for inputs */
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #16415c; /* Button background color */
+            color: #ffffff; /* Button text color */
+            border: none;
+            border-radius: 5px; /* Rounded corners for button */
+            cursor: pointer;
+            transition: background 0.3s; /* Smooth transition for button */
+        }
+        button:hover {
+            background-color: #2c3e50; /* Darker button background on hover */
+        }
+        .confirmation {
+            margin-top: 20px;
+            color: #28a745; /* Green color for confirmation message */
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Home Appliances</h1>
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav>
+            <ul id="nav-links" class="nav-links">
+                <li><a href="#kitchen">Kitchen Appliances</a></li>
+                <li><a href="#bathroom">Bathroom Appliances</a></li>
+                <li><a href="#furniture">Furniture</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="kitchen" class="section">
+        <h2>Kitchen Appliances</h2>
+        <div class="appliance">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/61tptAckD7L._AC_SL1169_.jpg" alt="Blender">
+            <h3>Blender</h3>
+            <p>High-speed blender for smoothies and soups.</p>
+        </div>
+        <div class="appliance">
+            <img src="https://i5.walmartimages.ca/images/Enlarge/267/862/885170267862.jpg" alt="Oven">
+            <h3>Microwave Oven</h3>
+            <p>Compact microwave for quick heating.</p>
+        </div>
+        <div class="appliance">
+            <img src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/2038/2038159cv12d.jpg" alt="Coffee Maker">
+            <h3>Coffee Maker</h3>
+            <p>Brews fresh coffee in minutes.</p>
+        </div>
+    </section>
+
+    <section id="bathroom" class="section">
+        <h2>Bathroom Appliances</h2>
+        <div class="appliance">
+            <img src="https://images.philips.com/is/image/PhilipsConsumer/HX6974_76-IMS-en_US?$jpglarge$&wid=1250" alt="Electric Toothbrush">
+            <h3>Electric Toothbrush</h3>
+            <p>Advanced cleaning technology for a brighter smile.</p>
+        </div>
+        <div class="appliance">
+            <img src="https://i5.walmartimages.com/asr/577c9045-edb7-4fae-a435-0a9a9aa1110d_1.cdf194432793a133f3e30ef095ec8821.jpeg" alt="Hair Dryer">
+            <h3>Hair Dryer</h3>
+            <p>Fast drying with multiple heat settings.</p>
+        </div>
+        <div class="appliance">
+            <img src="https://www.bassheadspeakers.com/wp-content/uploads/2015/11/Photive-Waterproof-Bluetooth-Shower-Speaker.jpg" alt="Shower Speaker">
+            <h3>Shower Speaker</h3>
+            <p>Waterproof speaker for music in the shower.</p>
+        </div>
+    </section>
+
+    <section id="furniture" class="section">
+        <h2>Furniture</h2>
+        <div class="appliance">
+            <img src="https://secure.img1-cg.wfcdn.com/im/05234996/compr-r85/2099/209999211/modern-stylish-dining-table-rectangle-white-sintered-stone-top.jpg" alt="Dining Table">
+            <h3>Dining Table</h3>
+            <p>Stylish dining table for family gatherings.</p>
+        </div>
+        <div class="appliance">
+            <img src="https://i5.walmartimages.com/asr/8e1f6776-999b-4550-9e1b-e8f8e03a34cc.ce0d8b113c171505642f0ec0e4931a45.jpeg" alt="Sofa">
+            <h3>Sofa</h3>
+            <p>Comfortable sofa for your living room.</p>
+        </div>
+        <div class="appliance">
+            <img src="https://miro.medium.com/v2/resize:fit:750/1*fjzraN2AaxfbK9IjjEDGxQ.jpeg" alt="Almirah">
+            <h3>Almirah</h3>
+            <p>Elegant Almirah for beautiful outfits.</p>
+        </div>
+    </section>
+
+    <footer class="section" id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions, feel free to reach out!</p>
+        <form id="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <div class="confirmation" id="confirmation-message" style="display: none;">Your message has been sent!</div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        const form = document.getElementById('contact-form');
+        const confirmationMessage = document.getElementById('confirmation-message');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent the default form submission
+            confirmationMessage.style.display = 'block'; // Show confirmation message
+            form.reset(); // Reset the form fields
+        });
+    </script>
+</body>
+</html>
